@@ -1,0 +1,90 @@
+package lab2;
+
+public class MadLib extends MadLibTemplate {
+	
+	private String title = "";
+	private String slot;
+	private String mTitle = "";
+
+	public MadLib(String title) {
+		
+		super(title);
+		//this.title = title;
+		mTitle = title;
+		System.out.println("MadLib Title is " + mTitle);
+		
+		
+	}
+
+
+	void addString(String text) {
+	  /**
+	   *
+	   * Add boilerplate text to this.
+	   *
+	   **/
+		title = title + text;
+		
+	}
+
+
+	void addSlot(String type) {
+	  /**
+	   *
+	   * Add a slot of the given type to this.
+	   *
+	   **/
+		slot =  type;
+		title = title + "<" + slot + ">";
+	}
+
+	
+	void printAsTemplate(UserInterface ui) {
+		
+	  /**
+	   *
+	   * Print out the mad lib as a template.
+	   *
+	   * This is for debugging purposes; print out the mad lib with the
+	   * slot type names substituted instead of slots. For example, a lib
+	   * containing the text entry "Hi," followed by a slot with type name
+	   * "proper noun" would print out ``Hi, -proper noun-''.
+	   *
+	   **/
+		if (mTitle != "" && slot.isEmpty() == false) {
+			ui.writeString(title);
+		}
+	}
+
+
+	void doLib(UserInterface ui) {
+	  /**
+	   *
+	   * Ask the user for words for each slot, in order, then substitute
+	   * the words in, and print out the lib.
+	   *
+	   * This function should prompt the user 
+	   *
+	   **/
+		
+		if (title.isEmpty() == false && slot.isEmpty() == false) {
+			
+			String sTemp;
+			
+			sTemp = ui.promptUser("Please enter the " + slot);
+			
+			if (title.indexOf("<") > 0)
+				sTemp = title.substring(0, title.indexOf('<')) + sTemp + title.substring(title.indexOf('>')+1);
+			
+			ui.writeString(sTemp);
+			
+		}
+
+				
+	}
+  
+}
+
+// but you can also declare your helper classes out here (or in their
+// own files in the lab2 package).
+

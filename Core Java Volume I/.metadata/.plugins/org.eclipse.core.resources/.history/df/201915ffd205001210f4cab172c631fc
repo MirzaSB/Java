@@ -1,0 +1,27 @@
+package lab2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class TextEntry extends MadLibEntry {
+	
+	List<String> lText = new ArrayList<String>();
+	List<MadLib> lMadLib = new ArrayList<MadLib>();
+
+	public String templateString() {
+		/** @return the value of this entry in a template **/
+
+		return null;
+	}
+
+	public String madLibString() {
+		/** @return the value of this entry in an actual madlib **/
+
+		return null;
+	}
+
+	public void doLib(UserInterface ui) {
+		
+	}
+	
+}

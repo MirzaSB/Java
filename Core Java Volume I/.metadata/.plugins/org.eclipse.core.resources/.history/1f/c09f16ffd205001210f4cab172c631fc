@@ -1,0 +1,21 @@
+package lab2;
+
+class Slot extends MadLibEntry {
+	
+	public String templateString() {
+		/** @return the value of this entry in a template **/
+
+		return null;
+	}
+
+	public String madLibString() {
+		/** @return the value of this entry in an actual madlib **/
+
+		return null;
+	}
+
+	public void doLib(UserInterface ui) {
+		
+	}
+	
+}
