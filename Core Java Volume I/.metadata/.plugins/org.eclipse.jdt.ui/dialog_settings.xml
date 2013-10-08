@@ -21,9 +21,9 @@
 		<item value="11" key="INCLUDE_MASK"/>
 		<item value="0" key="HISTORY_SIZE"/>
 	</section>
-	<section name="RenameInformationPopup">
-	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="RenameInformationPopup">
 	</section>
 	<section name="ClasspathContainerSelectionPage">
 		<item value="1" key="index"/>
