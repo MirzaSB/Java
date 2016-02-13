@@ -1,0 +1,5 @@
+application/Application.class
+application/health/HealthController.class
+application/hello/GreetingController.class
+application/health/Health.class
+application/hello/Greeting.class
