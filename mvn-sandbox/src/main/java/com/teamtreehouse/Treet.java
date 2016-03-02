@@ -1,6 +1,9 @@
 package com.teamtreehouse;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.io.Serializable;
 
 public class Treet implements Comparable<Treet>, Serializable {
@@ -48,6 +51,28 @@ public class Treet implements Comparable<Treet>, Serializable {
 
     public Date getCreationDate(){
         return mCreationDate;
+    }
+    
+    public List<String> getWords() {
+        return Arrays.asList(mDescription.toLowerCase().split("[^\\w#@']+"));
+    }
+    
+    private List<String> getWordsPrefixedWith(String symbol) {
+        List<String> results = new ArrayList<String>();
+        for(String word : getWords()) {
+            if(word.startsWith(symbol)) {
+                results.add(word);
+            }
+        }
+        return results;
+    }
+    
+    public List<String> getHashTags() {
+        return getWordsPrefixedWith("#");
+    }
+    
+    public List<String> getHashMentions() {
+        return getWordsPrefixedWith("@");
     }
 
 }
