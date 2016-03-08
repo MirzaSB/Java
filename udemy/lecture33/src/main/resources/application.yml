@@ -1,0 +1,4 @@
+config:
+  property2:
+    name: test config property name from application.yml
+    description: description for property in application.yml
