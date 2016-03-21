@@ -35,12 +35,12 @@ public class SongBook {
         ) {
                 String line;
             while((line = reader.readLine()) != null) {
-                line.split("\\|");
+                String args[] = line.split("\\|");
                 addSong(new Song(args[0], args[1], args[2]));
             }
 
         } catch (IOException e) {
-            System.out.printf("Problem loading %s %n", filename);
+            System.out.printf("Problems loading %s %n", filename);
             e.printStackTrace();
 
         }
@@ -58,7 +58,8 @@ public class SongBook {
      * FIX ME. This should be cached
      **/
     private Map<String, List<Song>> byArtist() {
-        Map<String, List<Song>> byArtist = new HashMap<>();
+        //Map<String, List<Song>> byArtist = new HashMap<>();
+        Map<String, List<Song>> byArtist = new TreeMap<>();
         for (Song song : mSongs) {
             List<Song> artistSongs = byArtist.get(song.getArtist());
             if (artistSongs == null) {
@@ -75,7 +76,19 @@ public class SongBook {
     }
 
     public List<Song> getSongsForArtists(String artistName) {
-        return byArtist().get(artistName);
+
+        List<Song> songs = byArtist().get(artistName);
+        songs.sort(new Comparator<Song>() {
+            @Override
+            public int compare(Song o1, Song o2) {
+                if(o1.equals(o2)) {
+                    return 0;
+                }
+                return o1.mTitle.compareTo(o2.mTitle);
+            }
+        });
+
+        return songs;
     }
 
 }

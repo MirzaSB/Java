@@ -1,0 +1,3 @@
+MJ|beat it|http://youtube.com/mj
+LP|In the end|http://youtube.com/lp
+ACDC|Back in black|http://youtube.com/acdc
