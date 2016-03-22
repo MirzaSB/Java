@@ -14,6 +14,7 @@ import javax.annotation.PostConstruct;
 @SpringBootApplication
 public class H2demoApplication {
 
+	/**
 	private static final Logger logger = LoggerFactory.getLogger(H2demoApplication.class);
 
 	@Autowired
@@ -21,15 +22,18 @@ public class H2demoApplication {
 
 	@Autowired
 	DataLoader dataLoader;
+	**/
 
 	public static void main(String[] args) {
 		SpringApplication.run(H2demoApplication.class, args);
 	}
 
+	/**
 	@PostConstruct
 	void seePosts(){
 		for(Post post : postRepository.findAll() ){
 			logger.info(post.toString());
 		}
 	}
+	**/
 }

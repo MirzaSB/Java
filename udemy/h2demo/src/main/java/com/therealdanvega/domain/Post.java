@@ -21,15 +21,19 @@ public class Post {
     @Column(columnDefinition = "TEXT")
     private String body;
 
+    @Column(columnDefinition = "TEXT")
+    private String teaser;
+
+    private String slug;
+
+    @CreatedDate @Column(columnDefinition = "TIMESTAMP")
     private Date postedOn;
 
     @ManyToOne
     private Author author;
 
     // private no arg constructor is needed by JPA
-    private Post(){
-
-    }
+    private Post(){}
 
     // our public constructor makes sure a title is set when creating a new Post
     public Post(String title){
