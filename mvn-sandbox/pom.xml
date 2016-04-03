@@ -5,8 +5,9 @@
   <groupId>mvn-sandbox</groupId>
   <artifactId>mvn-sandbox</artifactId>
   <version>1</version>
-  <packaging>jar</packaging>
+  
 
+<!--  
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
@@ -16,6 +17,7 @@
       <target>1.8</target>
     </configuration>
   </plugin>
+  -->
 
   <name>mvn-sandbox</name>
   <url>http://maven.apache.org</url>

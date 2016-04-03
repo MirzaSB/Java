@@ -2,6 +2,7 @@ package com.sandbox;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Timer;
 import java.util.function.Consumer;
 
 public class Lambda_Sandbox {
@@ -32,6 +33,10 @@ public class Lambda_Sandbox {
                     s = "From Lambda --> " + s;
                     System.out.println(s);
                 });
+
+        String[] planets = new String[] {"Mercury", "Venus", "Earth",
+        "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
+        System.out.println(Arrays.toString(planets));
 
     }
 }
