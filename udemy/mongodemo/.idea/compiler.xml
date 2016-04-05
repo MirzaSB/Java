@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="mongodemo" />
+        <module name="mongodb-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mongodemo" target="1.8" />
+      <module name="mongodb-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
