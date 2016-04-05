@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import javax.swing.*;
 
 public class LambdaSandbox {
@@ -30,10 +32,13 @@ public class LambdaSandbox {
         //JOptionPane.showMessageDialog(null, "Quit program?");
         //System.exit(0);
 
-        Timer t = new Timer(1000, System.out::println);
-        t.start();
+        //Timer t = new Timer(1000, System.out::println);
+        //t.start();
 
-        ArrayList<String> textList = ArrayList<String>::new;
+        List<String> convertedList = Arrays.asList(planets).stream()
+                .map(String::toLowerCase).collect(Collectors.toList());
+        convertedList.stream().forEach(System.out::println);
+
 
     }
 
