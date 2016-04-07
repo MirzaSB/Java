@@ -39,6 +39,10 @@ public class LambdaSandbox {
                 .map(String::toLowerCase).collect(Collectors.toList());
         convertedList.stream().forEach(System.out::println);
 
+        List<String> convertedList2 = Arrays.asList(planets).stream()
+                .map(String::toUpperCase).collect(Collectors.toList());
+        convertedList2.stream().forEach(System.out::println);
+
 
     }
 
