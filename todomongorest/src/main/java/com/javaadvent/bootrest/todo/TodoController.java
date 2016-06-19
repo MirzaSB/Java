@@ -2,7 +2,13 @@ package com.javaadvent.bootrest.todo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -24,7 +30,7 @@ final class TodoController {
         return service.create(todoEntry);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/id/{id}", method = RequestMethod.DELETE)
     TodoDTO delete(@PathVariable("id") String id) {
         return service.delete(id);
     }
@@ -34,12 +40,13 @@ final class TodoController {
         return service.findAll();
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    TodoDTO findById(String id) {
-        return service.findById(id);
+    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
+    TodoDTO findById(@PathVariable("id") String id) {
+        TodoDTO todoEntry = service.findById(id);
+        return todoEntry;
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/id/{id}", method = RequestMethod.PUT)
     TodoDTO update(@RequestBody @Valid TodoDTO todoEntry) {
         return service.update(todoEntry);
     }
