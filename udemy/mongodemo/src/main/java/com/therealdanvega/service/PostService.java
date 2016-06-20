@@ -30,5 +30,4 @@ public class PostService {
         return postRepository.findBySlug(slug);
     }
 
-
 }
